@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>杨福海博客</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bh-css.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="highlight/styles/railscasts.css">
+</head>
+<body>
+<div class="container-fluid" style="padding:0;">
+    <div class="bh-content">
+        <div class="bh-nav-sidebar">
+            <ul>
+                <li><a class="active" href="bonhumeur-index.html">Index</a></li>
+                <li><a href="bonhumeur-detail.html">Me!</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <nav class="bh-header">
+                <a class="active" href="#">首页 .</a>
+                <a href="#">技术 .</a>
+                <a href="#">随笔 .</a>
+                <a href="#">教程 .</a>
+            </nav>
+            <div class="bh-artical-content">
+                <h2 class="bh-artical-title">JPress的ehcache缓存方案、以及踩过ehcache的坑JPress的ehcache缓存方案、以及踩过ehcache的坑</h2>
+                <div class="bh-card-tag">
+                    <div class="">
+                        <img src="img/list-image.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+                        <span class="text-success">海哥</span>
+                    </div>
+                    <div><i class="fa fa-clock-o"></i> 2017-10-01 18:00</div>
+                    <div><i class="fa fa-eye"></i> 156</div>
+                    <div><i class="fa fa-commenting-o"></i> 2</div>
+                </div>
+                <div class="bh-artical">
+                    <p>里面主要是用到了自定义白名单的功能，允许的base64的图片提交，增加视频等更多HTML5的属性支持，同时极易扩展更多的标签和属性。里面主要是用到了自定义白名单的功能，允许的base64的图片提交，增加视频等更多HTML5的属性支持，同时极易扩展更多的标签和属性。里面主要是用到了自定义白名单的功能，允许的base64的图片提交，增加视频等更多HTML5的属性支持，同时极易扩展更多的标签和属性。里面主要是用到了自定义白名单的功能，允许的base64的图片提交，增加视频等更多HTML5的属性支持，同时极易扩展更多的标签和属性。</p>
+                    <h1>我是标题H1</h1>
+                    <h2>我是标题H2</h2>
+                    <h3>我是标题H3</h3>
+                    <h4>我是标题H4</h4>
+                    <h5>我是标题H5</h5>
+                    <p><img src="img/blog-image.jpg" alt=""></p>
+                    <p>最近为了提高J按的性能，减少数据查询的次数，J按大量使用了的Ehcache缓存作为起内置缓存，同时会话也是基于ehcache的重新实现的支持分部署的会议解决方案。</p>
+                    <h4>1、JFinal里配置ehcachePlugin插件；(H4)</h4>
+                    <p>因为J按是基于JFinal快速开发框架，而JFinal又内置了的Ehcache的插件，使用起来及其简单。因为J按是基于JFinal快速开发框架，而JFinal又内置了的Ehcache的插件，使用起来及其简单。因为J按是基于JFinal快速开发框架，而JFinal又内置了的Ehcache的插件，使用起来及其简单。因为J按是基于JFinal快速开发框架，而JFinal又内置了的Ehcache的插件，使用起来及其简单。</p>
+                    <h4>2、在类路径下添加ehcache的的配置文件ehcache.xml中</h4>
+                    <p>因为J按是基于JFinal快速开发框架，而JFinal又内置了的Ehcache的插件，使用起来及其简单。因为J按是基于JFinal快速开发框架，而JFinal又内置了的Ehcache的插件，使用起来及其简单。因为J按是基于JFinal快速开发框架，而JFinal又内置了的Ehcache的插件，使用起来及其简单。因为J按是基于JFinal快速开发框架，而JFinal又内置了的Ehcache的插件，使用起来及其简单。</p>
+                    <h4 >3、直接使用EhcacheKit操作缓存。</h4>
+                    <pre>
+            <code>
+
+    .bh-cloumn-nav{
+    padding:1.5rem 0;
+    margin:0 2.5rem 0 0;
+    border-right:1px solid #dfdfdf;
+    }
+    .bh-cloumn-nav .bh-cloumn-nav-item{
+    padding:1rem;
+    color:#333;
+    }
+    .bh-cloumn-nav .bh-cloumn-nav-item.active{
+    background-color:#0050B3 ;
+    color:#fff;
+    }
+    .bh-about-banner{
+    height: 180px;
+    overflow: hidden;
+    }
+
+            </code>
+        </pre>
+                    <p>到此，一切很顺利的进行着，但随着J按在大量的使用ehcache的，ehcache的的缓存数据操作与更新就变成了一个棘手的问题，更新数据库数据了，缓存若得不到及时更新，就会导致程序在运行的过程中有大量的BUG，各种莫名其妙的问题。此时，缓存数据的更新，就需要一个良好更新的计划和方案。</p>
+                    <p> 此段省去100万字。。。</p>
+                    <P>直接上段教程</P>
+                    <p>送上一句话：</p>
+                    <blockquote>
+                        社交媒体对身份政治（identity politics）的贡献众所周知，但我认为它对一个更深层次的东西也有贡献：这个东西就是身份麻痹（identity paralysis）。身份麻痹是指我们有一种对我们怎么说和怎么做反映的是我们自己的强迫意识（甚至包括一些似乎不重要的事情，如穿什么鞋，坐什么样的飞机）。结果就是我们这一代也会以独一无二的方式吸引品牌让我们按照自己希望的方式去感受自己，即便我们内心怎么看待自己往往不过是我们希望别人看待我们的样子罢了。
+                    </blockquote>
+                    <p>备的早餐...到此，J按在遇到的ehcache的坑中解决完毕，终于松了一口气，美美吃上了老婆给我准.</p>
+                </div>
+                <div class="recommend-panel">
+                    <h4 class="bh-title">相关文章</h4>
+                    <div class="card-deck">
+                        <div class="card bh-panel">
+                            <a class="recommend-panel-link" href="bonhumeur-detail.html">
+                                <div class="recommend-panel-top">
+                                    <img src="img/default-img.jpg" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="recommend-panel-bottom">
+                                    新资本 | 晟道投资：资本寒冬，我们做生态的建设者
+                                </div>
+                            </a>
+                        </div>
+                        <!--<div class="card bh-panel">-->
+                            <!--<a class="recommend-panel-link" href="bonhumeur-detail.html">-->
+                                <!--<div class="recommend-panel-top">-->
+                                    <!--<img src="img/default-img.jpg" class="img-fluid" alt="Responsive image">-->
+                                <!--</div>-->
+                                <!--<div class="recommend-panel-bottom">-->
+                                    <!--库克又来了： 苹果新装备“打卡”魔都，随时加大对华投资-->
+                                <!--</div>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <div class="card bh-panel">
+                            <a class="recommend-panel-link" href="bonhumeur-detail.html">
+                                <div class="recommend-panel-top">
+                                    <img src="img/default-img.jpg" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="recommend-panel-bottom">
+                                    沉迷游戏的年轻人：或肝或氪，痛并快乐，缩影着真实世界
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment">
+                    <h4 class="bh-title">发表评论</h4>
+                    <form class="bh-comment-from">
+                        <div>
+                            <span class="bh-comment-from-icon"><i class="fa fa-pencil"></i></span>
+                            <textarea placeholder="想说就说吧..." rows="1"></textarea>
+
+                        </div>
+                        <button type="button">发射</button>
+                        <span class="clearfix"></span>
+                    </form>
+
+                    <div class="comment-panel">
+                        <div class="comment-panel-portrait">
+                            <img src="img/list-image2.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+                        </div>
+                        <div class="comment-panel-content">
+                            <div class="comment-panel-content-item">
+                                <div>薅羊毛项目</div>
+                                <div>2017-10-01 18:00</div>
+                            </div>
+                            <div class="comment-panel-content-main">不错</div>
+                        </div>
+                        <span class="clearfix"></span>
+                        <div class="text-right text-primary"><a href="">回复</a></div>
+                    </div>
+
+                    <div class="comment-panel">
+                        <div class="comment-panel-portrait">
+                            <img src="img/list-image.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+                        </div>
+                        <div class="comment-panel-content" >
+                            <div class="comment-panel-content-item">
+                                <div>jean</div>
+                                <div>2017-10-01 18:00</div>
+                            </div>
+                            <div class="comment-panel-content-main">我上传的是FTP，怎么安装？</div>
+                            <!--comment-secondary-panel-->
+                            <div class="comment-secondary-panel">
+                                <div class="comment-panel-portrait">
+                                    <img src="img/list-image2.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+                                </div>
+                                <div class="comment-panel-content">
+                                    <div class="comment-panel-content-item">
+                                        <div>海哥</div>
+                                        <div>2017-10-01 18:00</div>
+                                    </div>
+                                    <div class="comment-panel-content-main">稍等我看下。。。。</div>
+                                </div>
+                                <span class="clearfix"></span>
+                            </div>
+                            <!---->
+                        </div>
+                        <span class="clearfix"></span>
+                        <div class="text-right text-primary"><a href="">回复</a></div>
+                    </div>
+                    <div class="comment-panel">
+                        <div class="comment-panel-portrait">
+                            <img src="img/list-image2.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+                        </div>
+                        <div class="comment-panel-content">
+                            <div class="comment-panel-content-item">
+                                <div>罗中中博客 </div>
+                                <div>2017-10-01 18:00</div>
+                            </div>
+                            <div class="comment-panel-content-main">算了，发错地方了。。。</div>
+                        </div>
+                        <span class="clearfix"></span>
+                        <div class="text-right text-primary"><a href="">回复</a></div>
+                    </div>
+                    <div class="comment-panel">
+                        <div class="comment-panel-portrait">
+                            <img src="img/list-image.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+                        </div>
+                        <div class="comment-panel-content">
+                            <div class="comment-panel-content-item">
+                                <div>真新赚</div>
+                                <div>2017-10-01 18:00</div>
+                            </div>
+                            <div class="comment-panel-content-main">我上传的是FTP，怎么安装？</div>
+                        </div>
+                        <span class="clearfix"></span>
+                        <div class="text-right text-primary"><a href="">回复</a></div>
+                    </div>
+                    <div class="comment-panel">
+                        <div class="comment-panel-portrait">
+                            <img src="img/list-image2.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+                        </div>
+                        <div class="comment-panel-content">
+                            <div class="comment-panel-content-item">
+                                <div>武汉POS机</div>
+                                <div>2017-10-01 18:00</div>
+                            </div>
+                            <div class="comment-panel-content-main">这技术也是杠杠滴呀</div>
+                        </div>
+                        <span class="clearfix"></span>
+                        <div class="text-right text-primary"><a href="">回复</a></div>
+                    </div>
+                    <div class="comment-panel">
+                        <div class="comment-panel-portrait">
+                            <img src="img/list-image.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+                        </div>
+                        <div class="comment-panel-content">
+                            <div class="comment-panel-content-item">
+                                <div>青未博客</div>
+                                <div>2017-10-01 18:00</div>
+                            </div>
+                            <div class="comment-panel-content-main">我说呢，原来如此</div>
+                        </div>
+                        <span class="clearfix"></span>
+                        <div class="text-right text-primary"><a href="">回复</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--footer-->
+        <div class="bh-footer">
+            <p class="bh-copyright"><a href="#">联系我们</a> | 本设计由简.工作室荣誉出品</p>
+            <p class="bh-copyright">copyright @ 2017~2018 简.工作室（www.jeanstudio.cn）</p>
+        </div>
+    </div>
+</div>
+
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
