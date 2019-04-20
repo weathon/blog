@@ -10,4 +10,5 @@ We all know, visit a website we need to find out the IP adress of the web server
 [^DNS hijacking - wikipedia]:https://en.wikipedia.org/wiki/DNS_hijacking
 [^DNS over HTTPS - Wikipedia]:https://en.wikipedia.org/wiki/DNS_over_HTTPS
 
-##2. 
+##2. HTTP and HTTPS
+Although some website support HTTPS, they also support HTTP, and maybe they use the same cookie or token or HTTPS and HTTP, this will allow attacker gijacking the HTTP
