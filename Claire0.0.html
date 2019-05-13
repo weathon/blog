@@ -10,15 +10,16 @@
     <button onclick="alert('WOW!')">Yes</button>
     <button id="a" onclick="move();" style="position:fixed;">No</button>
     <script>
-    count=0;
+        count = 0;
+
         function move() {
             document.getElementById("a").style.right = String(Math.random() * 100) + "%";
             document.getElementById("a").style.top = String(Math.random() * 100) + "%";
-            document.getElementById("title").style.top = rgb(String(Math.random() * 255) +","+ String(Math.random() * 255) +","+String(Math.random() * 255)+")";
-           count=count+1;
-           if(count>5){
-alert("Why!!!!!!!!!!!")
-}
+            document.getElementById("title").style.color = "rgb(" + String(Math.random() * 255) + "," + String(Math.random() * 255) + "," + String(Math.random() * 255) + ")";
+            count = count + 1;
+            if (count > 5) {
+                alert("Why!!!!!!!!!!!")
+            }
         }
     </script>
 </body>
