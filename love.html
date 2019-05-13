@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>？？？</title>
+</head>
+
+<body>
+    <h1>Can I like you?</h1>
+    <button onclick="alert('WOW!')">Yes</button>
+    <button id="a" onclick="move();" style="position:fixed;">No</button>
+    <script>
+        function move() {
+
+            document.getElementById("a").style.right = String(Math.random() * 50) + "px";
+            document.getElementById("a").style.top = String(Math.random() * 50) + "px";
+
+        }
+    </script>
+</body>
+
+</html>
