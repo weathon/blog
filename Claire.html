@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>？？？</title>
+    <meta name="viewport" content="width=device-width" />
+</head>
+
+<body>
+    <h1>Can we be sweetheart?</h1>
+    <button onclick="alert('WOW!')">Yes</button>
+    <button id="a" onclick="move();" style="position:fixed;">No</button>
+    <script>
+    count=0;
+        function move() {
+            document.getElementById("a").style.right = String(Math.random() * 100) + "%";
+            document.getElementById("a").style.top = String(Math.random() * 100) + "%";
+           count=count+1;
+           if(count>5){
+alert("Why!!!!!!!!!!!")
+}
+        }
+    </script>
+</body>
+
+</html>
