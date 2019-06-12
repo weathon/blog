@@ -26,7 +26,8 @@ t="""                                <!-- Add New Articles Here -->
                                 <div class="bh-card-tag">
                                     <div><i class="fa fa-clock-o"></i>%s</div>
                                     <div><i class="fa fa-eye"></i>%s</div>
-                                </div>""" %(Num,Title,datetime.datetime.now().strftime('%Y-%m-%d'),Tag)
+                                </div>
+                                <p class="bh-card-main-info"></p>""" %(Num,Title,datetime.datetime.now().strftime('%Y-%m-%d'),Tag)
 myindex=myindex.replace("<!-- Add New Articles Here -->",t)
 with open("index.html","wb") as f:
     f.write(myindex.encode("utf-8"))
@@ -45,6 +46,7 @@ t2="""<!DOCTYPE html>
     <link href="../css/bh-css.css" rel="stylesheet">
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../highlight/styles/railscasts.css">
+    <meta name="referrer" content="no-referrer">
 </head>
 <body>
 <div class="container-fluid" style="padding:0;">
