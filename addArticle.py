@@ -75,10 +75,9 @@ t2="""<!DOCTYPE html>
                     </div>
                 </div>
                 <div class="bh-artical">
-                    <img src="//i0.hdslb.com/bfs/article/a6a967bb5977e5460e20bfc4b9924424281f97e3.jpg@860w_482h.webp"/>
-                        <div class="article-holder">
+                    <div class="article-holder">
                         %s
-                        /div>
+                        </div>
                         <a href="%s"><font color="blue">阅读原文</font></a>
                     </div>
 
