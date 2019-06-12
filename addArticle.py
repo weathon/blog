@@ -5,6 +5,7 @@ Original=input("Original link:")
 Author=input("Author:")
 Tag=input("Tag:")
 Num=input("Num:")
+outline=input("Outline:")
 Context=""
 print("Context(text/plane-1,file-2)")
 if input() == "2":
@@ -27,7 +28,7 @@ t="""                                <!-- Add New Articles Here -->
                                     <div><i class="fa fa-clock-o"></i>%s</div>
                                     <div><i class="fa fa-eye"></i>%s</div>
                                 </div>
-                                <p class="bh-card-main-info"></p>""" %(Num,Title,datetime.datetime.now().strftime('%Y-%m-%d'),Tag)
+                                <p class="bh-card-main-info">%s</p>""" %(Num,Title,datetime.datetime.now().strftime('%Y-%m-%d'),Tag,outline)
 myindex=myindex.replace("<!-- Add New Articles Here -->",t)
 with open("index.html","wb") as f:
     f.write(myindex.encode("utf-8"))
