@@ -1,9 +1,9 @@
-#Python3
+#coding:utf-8
 import easygui,datetime,os
 Title=input("Title:")
 Original=input("Original link:")
 Author=input("Author:")
-tag=input("Tag:")
+Tag=input("Tag:")
 Num=input("Num:")
 Context=""
 print("Context(text/plane-1,file-2)")
@@ -18,18 +18,18 @@ else:
         else:
             Context+=thisCon+"<br/>"
 
-with open("index.html","r") as f:
-    index=f.read()
-
+with open("index.html","rb") as f:
+    myindex=f.read().decode("utf-8")
+print(myindex)
 t="""                                <!-- Add New Articles Here -->
                                 <h3 class="bh-card-main-title"><a href="articles/%s.html">%s</a></h3>
                                 <div class="bh-card-tag">
                                     <div><i class="fa fa-clock-o"></i>%s</div>
                                     <div><i class="fa fa-eye"></i>%s</div>
                                 </div>""" %(Num,Title,datetime.datetime.now().strftime('%Y-%m-%d'),Tag)
-index=index.replace("<!-- Add New Articles Here -->",t)
-with open("index.html","w") as f:
-    f.write(index)
+myindex=myindex.replace("<!-- Add New Articles Here -->",t)
+with open("index.html","wb") as f:
+    f.write(myindex.encode("utf-8"))
 
 
 
@@ -99,9 +99,9 @@ t2="""<!DOCTYPE html>
 </body>
 </html>
 """ % (Title,Title,Author,Context,Original)
-with open("articles/%s.html" % Num,"w") as f:
-    c=f.write(t2)
+with open("articles/%s.html" % Num,"wb") as f:
+    c=f.write(t2.encode("utf-8"))
 if input("Push?(Y/n)") == "Y":
     os.system("git add .")
-    os.system("git commit -m 'Add article'")
+    os.system('git commit -m "Add article"')
     os.system("git push")
