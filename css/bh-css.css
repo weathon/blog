@@ -17,7 +17,7 @@ a:hover{
     width: 320px;
     position: absolute;
     top:0;
-    left:60px;
+    left:0px;
     background: url(../img/sidebar-image.jpg) no-repeat left top;
 }
 .bh-nav-sidebar{
