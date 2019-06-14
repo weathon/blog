@@ -1,55 +1,14 @@
-#coding:utf-8
-import easygui,datetime,os
-Title=input("Title:")
-Original=input("Original link:")
-Author=input("Author:")
-Tag=input("Tag:")
-Num=input("Num:")
-outline=input("Outline:")
-Context=""
-print("Context(text/plane-1,file-2)")
-if input() == "2":
-    with open(input()) as f:
-        Context=f.read()
-else:
-    while 1:
-        thisCon=input(":")
-        if thisCon==":quit":
-            break
-        else:
-            Context+=thisCon+"<br/>"
-
-# with open("index.html","rb") as f:
-#     myindex=f.read().decode("utf-8")
-with open("index.html","rb") as f:
-    myindex=f.read().decode("utf-8")
-# print(myindex)
-t="""                                <!-- Add New Articles Here -->
-                                <h3 class="bh-card-main-title"><a href="articles/%s.html">%s</a></h3>
-                                <div class="bh-card-tag">
-                                    <div><i class="fa fa-clock-o"></i>%s</div>
-                                    <div><i class="fa fa-eye"></i>%s</div>
-                                </div>
-                                <p class="bh-card-main-info">%s</p>""" %(Num,Title,datetime.datetime.now().strftime('%Y-%m-%d'),Tag,outline)
-myindex=myindex.replace("<!-- Add New Articles Here -->",t)
-with open("index.html","wb") as f:
-    f.write(myindex.encode("utf-8"))
-
-
-
-
-t2="""<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>%s</title>
+    <title>化学实验里令你恐惧的有哪些？</title>
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bh-css.css" rel="stylesheet">
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../highlight/styles/railscasts.css">
-    <meta name="referrer" content="no-referrer">
 </head>
 <body>
 <div class="container-fluid" style="padding:0;">
@@ -72,18 +31,19 @@ t2="""<!DOCTYPE html>
                 <a href="https://sighttp.qq.com/msgrd?v=1&uin=2907154449">商务合作 .</a>
             </nav>
             <div class="bh-artical-content">
-                <h2 class="bh-artical-title">%s</h2>
+                <h2 class="bh-artical-title">在美国高中演示实验录像</h2>
                 <div class="bh-card-tag">
                     <div class="">
                         <img src="face.jpg" class="img-fluid rounded-circle" alt="Responsive image">
-                        <span class="text-success">%s</span>
+                        <span class="text-success">程序猿啊</span>
                     </div>
                 </div>
                 <div class="bh-artical">
                     <div class="article-holder">
-                        %s
-                        </div>
-                        <a href="%s"><font color="blue">阅读原文</font></a>
+                        <iframe id="myVideo" class="myvideo" width="560" height="315" src="https://player.bilibili.com/player.html?aid=55620145" frameborder="0" allowfullscreen=""></iframe>
+                        
+                    </div>
+                        <a href="https://www.bilibili.com/video/av55620145/"><font color="blue">阅读原文</font></a>
                     </div>
 
         <div class="bh-footer">
@@ -102,10 +62,3 @@ t2="""<!DOCTYPE html>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
-""" % (Title,Title,Author,Context,Original)
-with open("articles/%s.html" % Num,"wb") as f:
-    c=f.write(t2.encode("utf-8"))
-if input("Push?(Y/n)") == "Y":
-    os.system("git add .")
-    os.system('git commit -m "Add article"')
-    os.system("git push")
