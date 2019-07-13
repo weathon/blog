@@ -14,4 +14,4 @@ We all know that we need to find out the IP address of the web server if we visi
 
 ## 2. HTTP and HTTPS
 
-Although some websites support HTTPS, they also support a HTTP connect. And maybe sometimes they use the same cookie or token orve HTTPS and HTTP. This will allow attackers to highjack the HTTP cookies or tokens and use them to log in users' account over HTTPS.
+Although some websites support HTTPS, they also support a HTTP connect. And maybe sometimes they use the same cookie or token orve HTTPS and HTTP. This will allow attackers to highjack the HTTP cookies or tokens and use them to log in users' accounts over HTTPS. And some websites load the images and other course over HTTP and this will also send a request with cookie.
