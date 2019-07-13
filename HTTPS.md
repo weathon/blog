@@ -14,4 +14,4 @@ We all know that we need to find out the IP address of the web server if we visi
 
 ## 2. HTTP and HTTPS
 
-Although some website support HTTPS, they also support HTTP, and maybe they use the same cookie or token or HTTPS and HTTP, this will allow attacker gijacking the HTTP
+Although some websites support HTTPS, they also support a HTTP connect. And maybe sometimes they use the same cookie or token orve HTTPS and HTTP. This will allow attackers to gijack the HTTP cookie and use them to login users account over HTTPS.
