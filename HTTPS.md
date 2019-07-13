@@ -5,7 +5,8 @@ HTTPS means "HTTP over SSL" or "HTTP Secure". Because of this name, people often
 
 ## 1. DNS resolution
 
-We all know that visit a website we need to find out the IP adress of the web server, but most of the website has a domain, when people visit that website, they need to send a request to a DNS server to get the IP adress. But DNS can be hijacked ([^DNS hijacking - Wikipedia]), an attacker can hijacking user's DNS request and forging a destination address to make user get to their fake website(*Because HTTPS uses certificate checking, the attacker will only redirects the domain name to a normal HTTP connection.*). Although nowadays some APP using HTTP DNS (HTTP DNS also can be hijacking) or DNS over HTTPS ([^DNS over HTTPS - Wikipedia]) but some even most the broser are not(Though Icannot find data to support my opinion.)!
+We all know that we need to find out the IP address of the web server if we visit a website, but most of the website has a domain. When people visit that website, they need to send a request to a DNS server to get the IP adress, but DNS can be hijacked ([^DNS hijacking - Wikipedia]). An attacker can hijack users' DNS request and forge a destination address to make users go to their fake website (*Because HTTPS uses certificate checking, the attacker will only redirect the domain name to a normal HTTP connection.*). Although nowadays some APPs use HTTP DNS (HTTP DNS also can be hijacked) or DNS over HTTPS ([^DNS over HTTPS - Wikipedia]), some even most of the browsers are not using DNS over HTTPS.
+(Though I cannot find data to support my opinion.)
 
 
 [^DNS hijacking - wikipedia]:https://en.wikipedia.org/wiki/DNS_hijacking
