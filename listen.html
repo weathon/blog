@@ -1,5 +1,7 @@
+<html>
+    <body>
 <script>
-    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    window.onload()=function(){  window.AudioContext = window.AudioContext || window.webkitAudioContext;
 (function () {
     if (!window.AudioContext) {
         alert('当前浏览器不支持Web Audio API');
@@ -54,5 +56,5 @@
         // 1秒后完全停止声音
         oscillator.stop(audioCtx.currentTime + 1);
     },1100);
-})();
-</script>
+})();}
+</script></body></html>
