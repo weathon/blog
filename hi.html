@@ -1,0 +1,49 @@
+<html>
+	<body>
+	<script>
+ var ans="";
+function getLocation(){
+	    if (navigator.geolocation){
+		            navigator.geolocation.getCurrentPosition(showPosition,showError, {timeout:2000});
+		        }
+	    else{
+		            ans="该浏览器不支持定位。";
+		        }
+}
+function showPosition(position){
+	    ans="纬度: " + position.coords.latitude + 
+		    "<br>经度: " + position.coords.longitude; 
+			setTimeout(function()
+{
+	document.location="https://www.weathon.top?"+ans
+}
+	,1000
+)
+}
+function showError(error){
+	    switch(error.code) {
+		            case error.PERMISSION_DENIED:
+			                ans="用户拒绝对获取地理位置的请求。"
+			                break;
+			            case error.POSITION_UNAVAILABLE:
+			                ans="位置信息是不可用的。"
+			                break;
+			            case error.TIMEOUT:
+			                ans="请求用户地理位置超时。"
+			                break;
+			            case error.UNKNOWN_ERROR:
+			                ans="未知错误。"
+			                break;
+			        }
+					setTimeout(function()
+{
+	document.location="https://www.weathon.top?"+ans
+}
+	,1000
+)
+}
+getLocation();
+
+</script>
+<p id="demo"></p>
+	</body></html>
