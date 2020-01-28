@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		// define variables
+		function a(){
+		var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+		// getUserMedia block - grab stream 获取音频流
+		// put it into a  把音频流放入 MediaStreamAudioSourceNode
+		if (navigator.mediaDevices.getUserMedia) {
+			console.log('new getUserMedia supported.');
+			navigator.mediaDevices.getUserMedia(
+				// constraints: audio and video for this app
+				{
+					audio: true,
+					video: false
+				}).then(function (stream) {
+
+					// Create a MediaStreamAudioSourceNode
+					var options = {
+						mediaStream: stream
+					}
+
+					var source = new MediaStreamAudioSourceNode(audioCtx, options);
+					source.connect(audioCtx.destination);
+				}).catch(function (err) {
+					console.log('The following gUM error occured: ' + err);
+				});
+		} else {
+			console.log('new getUserMedia not supported on your browser!');
+		}}</script>
+		<button onclick="a();">开启环境音</button>
+</body>
+
+</html>
