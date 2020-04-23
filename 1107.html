@@ -14,8 +14,6 @@
     <br />
     /https://juejin.im/post/5d810d8cf265da03f77e9d5e
     <br />
-    软件定制服务: <a href="https://weathon.top">weathon.top</a>
-    <br />
     <br />
 
     对比(每个数<b>不用</b>空格隔开，比如1234)：
@@ -26,7 +24,7 @@
     <br />
     <input id="num"></input>
     <br />
-    <button onclick="go();">GO</button>
+    <button onclick="go();" id="btn">GO</button>
 
     <div id="ans"></div>
     <script>
@@ -83,6 +81,7 @@
         // 链接：https://juejin.im/post/5d810d8cf265da03f77e9d5e
         // 来源：掘金
         // 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+        tong=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
         function print(t)
         {
             document.getElementById("ans").innerHTML+=t;
@@ -90,6 +89,7 @@
         count=0;
         numcount=0;
         function go() {
+            document.getElementById("btn").hidden=true;
             ref = document.getElementById("ref").value;
             ans = permutationAndCombination(document.getElementById("num").value.split(" "));
             print("所有排列：")
@@ -113,11 +113,16 @@
                         ifans=true;
                         count++;
                         print("数字:"+ref[j]+'、')
+                        tong[Number(ref[j])]++;
                     }
                 }
             }
             print("<br/><h3>总匹配位数："+count+"</h3>");
             print("<br/><h3>总匹配数字个数："+numcount+"</h3>");
+            for(var i=1;i<=9;i++)
+            {
+                print("数字"+i+"的匹配次数是"+tong[i]+"<br/>")
+            }
         }
     </script>
 </body>
