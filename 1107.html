@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    很重要一部分代码来自：
+    <br />
+    作者：an3wer
+    <br />
+    /https://juejin.im/post/5d810d8cf265da03f77e9d5e
+    <br />
+    <br />
+
+    对比(每个数<b>不用</b>空格隔开，比如1234)：
+    <br />
+    <input id="ref"></input>
+    <br />
+    待排列(每个数空格隔开，比如 1 2 3 4)：
+    <br />
+    <input id="num"></input>
+    <br />
+    <button onclick="go();">GO</button>
+
+    <div id="ans"></div>
+    <script>
+        function permutationAndCombination(source = [], selectedLimit, isPermutation = true) {
+            if (!Array.isArray(source)) return source
+
+            // remove duplicated item
+            source = [...new Set(source)]
+            selectedLimit = selectedLimit || source.length
+
+            const result = []
+            const sourceLen = source.length
+
+            selectedLimit = selectedLimit > sourceLen ? sourceLen : selectedLimit
+
+            const innerLoop = (prefix = [], done = [], index = 0) => {
+                const prefixLen = prefix.length
+
+                for (let i = isPermutation ? 0 : index; i < sourceLen; i++) {
+
+                    if (prefixLen > selectedLimit - 1) break
+
+                    // Optimization: Continue to next cycle if current item has be already used for 'prefix'.
+                    if (done.includes(i)) continue
+
+                    const item = source[i]
+                    const newItem = [...prefix, item]
+
+                    if (prefixLen === selectedLimit - 1) {
+                        result.push(newItem)
+                    }
+
+                    if (prefixLen < selectedLimit - 1) {
+                        innerLoop(newItem, [...done, i], index++)
+                    }
+
+                }
+            }
+
+            if (source.length) {
+
+                // there is only one case if we want to select all items from source by combination.
+                if (!isPermutation && selectedLimit === sourceLen) {
+                    return source
+                }
+
+                innerLoop()
+            }
+
+            return result
+        }
+
+        // 作者：an3wer
+        // 链接：https://juejin.im/post/5d810d8cf265da03f77e9d5e
+        // 来源：掘金
+        // 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+        function print(t)
+        {
+            document.getElementById("ans").innerHTML+=t;
+        }
+        count=0;
+        numcount=0;
+        function go() {
+            ref = document.getElementById("ref").value;
+            ans = permutationAndCombination(document.getElementById("num").value.split(" "));
+            print("所有排列：")
+            for (var i = 0; i < ans.length; i++) {
+                print(ans[i].join(" ")+"<br/>")
+            }
+            print("<br/>")
+            console.log(ans);
+            for (var i = 0; i < ans.length; i++) {
+                var tmp2=ans[i].join("");
+                var ifans = false;
+                for (var j = 0; j < ref.length; j++) {
+                    //js不换行
+                    if(ref[j]==tmp2[j])
+                    {
+                        if(ifans==false)
+                        {
+                            print("<br/>"+tmp2+"中有匹配：<br/> --")
+                            numcount++;
+                        }
+                        ifans=true;
+                        count++;
+                        print("数字:"+ref[j]+'、')
+                    }
+                }
+            }
+            print("<br/><h3>总匹配位数："+count+"</h3>");
+            print("<br/><h3>总匹配数字个数："+numcount+"</h3>");
+        }
+    </script>
+</body>
+
+</html>
