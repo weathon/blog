@@ -83,6 +83,7 @@
         // 来源：掘金
         // 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
         tong=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        self_counter_tong=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
         function print(t)
         {
             document.getElementById("ans").innerHTML+=t;
@@ -90,6 +91,7 @@
         count=0;
         numcount=0;
         function go() {
+            
             document.getElementById("btn").hidden=true;
             ref = document.getElementById("ref").value;
             ans = permutationAndCombination(document.getElementById("num").value.split(" "));
@@ -100,6 +102,7 @@
             print("<br/>")
             console.log(ans);
             for (var i = 0; i < ans.length; i++) {
+                self_count=0;
                 var tmp2=ans[i].join("");
                 var ifans = false;
                 for (var j = 0; j < ref.length; j++) {
@@ -111,18 +114,24 @@
                             print("<br/>"+tmp2+"中有匹配：<br/> --")
                             numcount++;
                         }
+                        self_count++;
                         ifans=true;
                         count++;
                         print("数字:"+ref[j]+'、')
                         tong[Number(ref[j])]++;
                     }
                 }
+                self_counter_tong[self_count]++;
             }
             print("<br/><h3>总匹配位数："+count+"</h3>");
             print("<br/><h3>总匹配数字个数："+numcount+"</h3>");
             for(var i=1;i<=9;i++)
             {
                 print("数字"+i+"的匹配次数是"+tong[i]+"<br/>")
+            }
+            for(var i=1;i<=9;i++)
+            {
+                print("匹配位数为"+i+"的次数是"+self_counter_tong[i]+"<br/>")
             }
         }
     </script>
