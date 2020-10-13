@@ -1,0 +1,659 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Bible Test Review </title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fe5707dd-b3d9-46cc-bc7b-58c696d69b73" class="page sans"><header><h1 class="page-title">Bible Test Review </h1></header><div class="page-body"><h2 id="1a907971-374e-4850-957f-852e0c567dc3" class="">Memory Verse</h2><ul id="b8464c9b-98c0-48fc-b5c3-4a4b4b1464dd" class="bulleted-list"><li> 2 Timothy 1:6-7</li></ul><figure class="callout" style="white-space:pre-wrap;display:flex" id="fb9ff5b5-e657-4876-aba8-0bb68927c1a9"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">6 为此我提醒你，使你将　神藉我按手所给你的恩赐再如火挑旺起来。 7 因为　神赐给我们，不是胆怯的心，乃是刚强、仁爱、谨守的心。</div></figure><figure class="callout" style="white-space:pre-wrap;display:flex" id="9de7a4ee-130e-4572-8926-a4f023847172"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">要使屬靈的恩賜熾旺起來
+6 因這緣故、我才提醒你要使上帝屬靈的恩賜、藉我的按手燒𤏲在你心裏的、再熾旺起來。 7 因為上帝並不是賜給我們膽怯之靈、乃是賜能力愛心和修練之靈。</div></figure><figure class="callout" style="white-space:pre-wrap;display:flex" id="0236dd5c-de73-4b66-b787-afa0839af5a0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">6 For this reason I remind you to fan into flame the gift of God, which is in you through the laying on of my hands. 7 For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline.</div></figure><h2 id="d129a3dd-8919-490b-abce-c8dfbc1f0b1d" class="">Topics</h2><ul id="bdab6a12-50e1-4e1d-b73d-5cdef23d357b" class="bulleted-list"><li>All of the 12 disciplines<ul id="1614d226-c698-4a77-9d2e-b4a53ba40516" class="bulleted-list"><li>Study<ul id="7d8a052e-f288-41f0-9e71-823573729876" class="bulleted-list"><li> To study God’s word is to learn what God says to you. The purpose is not
+just to gain knowledge, but to be transformed from within (Romans 12:2).</li></ul></li></ul><ul id="1ae4e2bb-4973-4f71-accb-eec4c1e2a75b" class="bulleted-list"><li>Meditation</li></ul><ul id="7e292fbd-a3d5-4c69-96de-ce4139e32371" class="bulleted-list"><li>Prayer</li></ul><ul id="95b6ec44-25f9-4162-be41-55db42532fac" class="bulleted-list"><li>Fasting</li></ul><ul id="7ffb1063-3cf5-4683-b31f-3b904c346495" class="bulleted-list"><li>Worship</li></ul><ul id="9b7ddc39-b5f9-4f69-b6d4-a324c7389654" class="bulleted-list"><li>什么泡房瓦</li></ul><ul id="613a00c2-ac75-44c7-911d-b4c8f30dd3e7" class="bulleted-list"><li>Service</li></ul><ul id="2bad72bc-44b4-443a-8632-0d9797910884" class="bulleted-list"><li>Confession</li></ul><ul id="8a4bde2d-b7e0-4a23-b556-a74a35db1815" class="bulleted-list"><li>Guidance</li></ul><ul id="be985e9f-9f45-453b-8135-0b344a5fabf0" class="bulleted-list"><li>Celebration </li></ul><ul id="2e6feb40-11a3-47ff-9336-b963951c25a0" class="bulleted-list"><li>Solitude</li></ul><ul id="25920de1-8903-455d-82f6-8c7a214a3095" class="bulleted-list"><li>Submission</li></ul><ul id="3ae9cead-dcf5-46b9-ac73-c4d26893fe3e" class="bulleted-list"><li>Simplicity</li></ul><ul id="8992a9e7-97c9-470f-9a3b-fa191e2b4669" class="bulleted-list"><li>色彩刚才sss</li></ul></li></ul><ul id="f780313c-fa12-4369-a636-bf9f39220c5c" class="bulleted-list"><li>The purpose of Spiritual Disciplines</li></ul><ul id="81c340ba-8332-443f-8fd9-0c725adf270f" class="bulleted-list"><li>Central Idea of Submission<blockquote id="e05b9b67-e636-4adc-a766-842b1fcbddf0" class="">These disciplines have laid a solid foundation to prepare us for the
+next discipline in our study, the discipline of submission.
+Submission is “the ability to lay down the terrible burden of always
+needing to get our own way” (Foster, Celebration, p. 111).
+One of the greatest forms of slavery and frustration experienced by
+humankind is the obsession to think that things must go the way we
+want them to go! The discipline of submission helps us to realize that
+most things in life are not as important as we make them to be. We
+learn to realize that life goes on and it is okay that we can’t control it.</blockquote></li></ul><ul id="81ee776e-0797-4478-bd4f-e2e0151b9463" class="bulleted-list"><li>Definitions of each of the SD</li></ul><ul id="8b3acfed-6e8d-46e5-97d0-89cc372e99fd" class="bulleted-list"><li>Methods of Studys<ul id="6b09ce31-3415-4490-9440-ccf37c00e030" class="bulleted-list"><li>Use repetition: Ingrained thoughts lead to ingrained habits, i.e.
+transformation.</li></ul><ul id="76d315c1-6bc3-4db9-ad54-bdbb60df894a" class="bulleted-list"><li>Use the tools in the Bible</li></ul><ul id="e592375e-a5c7-4ec0-bf43-76693dc2f28e" class="bulleted-list"><li>Highlight the important parts in the Bible</li></ul></li></ul><ul id="d1c4623c-b9c5-42aa-9206-7c21ec74c272" class="bulleted-list"><li><mark class="highlight-yellow_background">Misconceptions of Solitude</mark><ul id="11caea84-6e74-407d-97a8-0a53732c5036" class="bulleted-list"><li>(For not to be confused, here is the RIGHT statement)</li></ul><ul id="5c325d18-c99b-4614-a1f6-19b3cb6e3ece" class="bulleted-list"><li>We should put our relationship with God higher than with others</li></ul></li></ul><ul id="eee5ef3d-50d1-4fba-8704-f03bcdb6cd13" class="bulleted-list"><li>Necessity of Simplicity, Inner Attitude, Outer Expression  ✔️</li></ul><ul id="de0a01ea-33fe-4579-b774-887631996d24" class="block-color-yellow_background bulleted-list"><li>What is Submisison, what does it gave us, and what are practical ways to practice it</li></ul><ul id="1e72afb3-7a21-45e8-8933-e22cb14cfaef" class="bulleted-list"><li>Two types of servie<ul id="9cbeb3a0-f9de-4271-9b25-8b65135a7a12" class="bulleted-list"><li>Self-righteous service vs True Service</li></ul><ul id="2cecd093-7941-454d-9530-7decb437d161" class="bulleted-list"><li>Comes through human effort vs comes from a relationship with Christ deep inside [results in compassion]</li></ul></li></ul><ul id="139e396a-669a-4f5b-8eae-66dc65acd32a" class="bulleted-list"><li>Things involved and requied in confession<ul id="5580bbe8-298d-4c94-b26d-6b2afdc63989" class="bulleted-list"><li>Agreeing with and admitting to God that we have sinned against Him and want to be forgiven</li></ul><ul id="a5d2b87c-766b-470b-9bc1-34f30fd186e6" class="bulleted-list"><li>Admitting our sin to a trusted accountability partner (James
+5:16) so we can be restored in our relationship with God and others
+who may be involved (Galatians 6:1-5).</li></ul><ul id="359af80e-dc0b-4451-a9f1-387984cf3b64" class="bulleted-list"><li>Declaring that we recognize Jesus Christ as our Lord and Savior</li></ul><ul id="6fedb0ea-4f0b-434c-bdb1-0812ee32c4af" class="bulleted-list"><li>An examination of your conscience<ul id="88efdfa2-8078-4513-849f-ace87ca482e3" class="bulleted-list"><li>Let God come into our mind</li></ul><ul id="5b0273ed-ea37-4336-9eda-0fefe1773cf4" class="bulleted-list"><li>Prepare to deal with definite sins.</li></ul></li></ul><ul id="9a98bc44-8063-4d67-adf1-f60edc35ab4d" class="bulleted-list"><li>Personal, godly sorrow<ul id="1f23e26d-8177-4102-9fcd-12c2fd53fcae" class="bulleted-list"><li>Help you take it seriously</li></ul><ul id="88dc2dea-f1de-4388-bfa1-dd8c7d6815a1" class="bulleted-list"><li>We must take the appropriate responsibility for what we have done.</li></ul></li></ul><ul id="931b02e5-b598-479e-bca1-37b9648a11cb" class="bulleted-list"><li>A determination to avoid sin in the future<ul id="d2ed47ae-4e61-4649-863f-5e7e7720bbf9" class="bulleted-list"><li>Fill ourself with good things.</li></ul><ul id="23d9a0ef-bbbe-4eb1-9d36-f2b74e3f6969" class="bulleted-list"><li>Cannot continues sining and hope God can forgive us</li></ul></li></ul><figure class="callout" style="white-space:pre-wrap;display:flex" id="bd128083-7632-4f9d-9fb5-1383538bc278"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Good news! Confession begins in sorrow, but ends in joy! There is
+celebration because the result is a genuinely changed life!</div></figure></li></ul><ul id="fccff89d-7721-4116-9a5c-bb1de38ee371" class="bulleted-list"><li>Why we worship<ul id="89af0db3-6477-4fc1-a573-0c8896e49de9" class="bulleted-list"><li>The object of worship is God</li></ul><ul id="93015201-e078-4766-80b8-86f44e11a1d0" class="bulleted-list"><li>Worship begins with the right attitude and follows with right actions.
+It is your intentional response to the love that God has shown you
+through Jesus (Romans 12:1).</li></ul><ul id="022ea162-4cc6-4a0c-934f-e8d23c492939" class="bulleted-list"><li>It is not for the timid or comfortable.</li></ul><ul id="609d2a85-bbe2-40d0-9d0a-dfd195bf60cc" class="bulleted-list"><li>It involves opening yourself to living according to the will of God as
+revealed through His Holy Spirit (attitude).</li></ul><ul id="32902fc5-6428-49b6-8df5-dd885240b492" class="bulleted-list"><li>It is obedience (action). It is not an anesthetic, opiate, or escape from
+the pressing needs of this present life.</li></ul></li></ul><ul id="d49c0cd3-0423-43e3-999c-2091fe11ffb7" class="bulleted-list"><li>Preparation for worship and fruit worship<ul id="fe356e4a-fe3a-4c26-a3f2-919955b4613e" class="bulleted-list"><li>The preparation for worship involves gathering to
+corporate worship with a holy expectancy that stems from
+daily practicing the presence of God. (Acts 4:31, 9:31,1
+Thessalonians 5:16-18)</li></ul><ul id="e385a54e-7caf-458e-9e08-ecdec55c2ae3" class="bulleted-list"><li>The fruit of worship is the ability to hear the call of God to
+service (Isaiah 6:5-8)</li></ul></li></ul><ul id="3755dfc8-cbe1-4723-9504-537179045e54" class="block-color-yellow_background bulleted-list"><li>What is Guidance, and how does that look today</li></ul><ul id="b783c6ac-2a00-40fb-957b-f6c3a38b312b" class="bulleted-list"><li>Why is celebration last<ul id="c23ecfed-68f5-45a2-9a17-6cb752009b77" class="bulleted-list"><li>In fact, the motivating factor to begin most disciplines
+(spiritual or otherwise) is usually that we know that joy is
+the end result.</li></ul><ul id="7ebd054a-84ab-4360-8256-7b690c2e3e37" class="bulleted-list"><li>Obedience, born out of trust, is the only thing that produces
+genuine joy. Therefore, joy is a result of the Spiritual
+Disciplines functioning in our lives. Warning: Don’t try to
+come up with joy too soon!</li></ul><ul id="ba8d23f2-8c78-4e35-acc5-4f6fc98a4907" class="bulleted-list"><li>“It is important to avoid the kind of celebrations that really
+celebrate nothing. Worse yet is to pretend to celebrate when
+the spirit of celebration is not in us” (Foster, Celebration, p.
+193).</li></ul><ul id="d57e38bd-62e0-4b74-bb68-55c479ef099d" class="bulleted-list"><li>“To miss out on joy is to miss out on the reason for your
+existence” (Lewis Smedes, in The Life, p. 68).</li></ul></li></ul></div></article></body></html>
